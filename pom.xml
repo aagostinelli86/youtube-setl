@@ -35,6 +35,10 @@
             <id>maven.apache.org</id>
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
+        <repository>
+            <id>ossrh-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -59,7 +63,7 @@
         <dependency>
             <groupId>com.jcdecaux.setl</groupId>
             <artifactId>setl_${scala.compat.version}</artifactId>
-            <version>0.4.0</version>
+            <version>0.4.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -165,25 +169,6 @@
                 <version>2.8.2</version>
                 <configuration>
                     <skip>true</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
-                <executions>
-                    <execution>
-                        <id>default-deploy</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <serverId>nexus</serverId>
-                    <nexusUrl>https://nexus.jcdecaux.com/</nexusUrl>
-                    <skipStaging>true</skipStaging>
                 </configuration>
             </plugin>
         </plugins>
